@@ -87,7 +87,7 @@ function MdToHtml() {
                     disabled
                 />
             </div>
-            <Button id="paste" onClick={() => pasteToMarkdown()}>paste to markdown</Button>
+            {/*<Button id="paste" onClick={() => pasteToMarkdown()}>paste to markdown</Button>*/}
             <Button id="copy" onClick={() => copyFromHtml(html_string)}>copy from html</Button>
             <div className={"preview p-entry__body"}>
                 <h1>Preview</h1>
