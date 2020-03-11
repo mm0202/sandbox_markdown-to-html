@@ -1,6 +1,6 @@
 {
-  "short_name": "React App",
-  "name": "Create React App Sample",
+  "short_name": "md-to-html",
+  "name": "md-to-html",
   "icons": [
     {
       "src": "favicon.ico",
