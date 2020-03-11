@@ -1,6 +1,6 @@
 import React from 'react';
-import {TextField, Button} from '@material-ui/core';
-import {createStyles, makeStyles, Theme} from '@material-ui/core/styles';
+import { TextField, Button } from '@material-ui/core';
+import { createStyles, makeStyles, Theme } from '@material-ui/core/styles';
 
 const md = localStorage.getItem('md');
 
@@ -25,7 +25,7 @@ function MdToHtml() {
     const copyFromHtml = (str: string) => {
         if (navigator.clipboard) {
             navigator.clipboard.writeText(str);
-        } else{
+        } else {
             alert("Async Clipboard APIに対応していません。")
         }
     };
@@ -87,12 +87,16 @@ function MdToHtml() {
                     disabled
                 />
             </div>
-            {/*<Button id="paste" onClick={() => pasteToMarkdown()}>paste to markdown</Button>*/}
-            <Button id="copy" onClick={() => copyFromHtml(html_string)}>copy from html</Button>
+            {/* {navigator.clipboard &&
+                <Button id="paste" onClick={() => pasteToMarkdown()}>paste to markdown</Button>
+            } */}
+            {navigator.clipboard &&
+                <Button id="copy" onClick={() => copyFromHtml(html_string)}>copy from html</Button>
+            }
             <div className={"preview p-entry__body"}>
                 <h1>Preview</h1>
-                <hr/>
-                <span dangerouslySetInnerHTML={{__html: preview_string}}/>
+                <hr />
+                <span dangerouslySetInnerHTML={{ __html: preview_string }} />
             </div>
         </div>
     );
