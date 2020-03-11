@@ -1,7 +1,6 @@
 import React from 'react';
 import { TextField } from '@material-ui/core';
 import { createStyles, makeStyles, Theme } from '@material-ui/core/styles';
-import '@fortawesome/fontawesome-free/css/all.css';
 
 const md = localStorage.getItem('md');
 
