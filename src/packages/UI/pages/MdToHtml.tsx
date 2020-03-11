@@ -49,7 +49,7 @@ function MdToHtml() {
             .replace(/```([^\n]*)\n([^`]*)```/g, '<pre class="lang:default decode:true ">$2</pre>')
             .replace(/`([^`]+)`/g, '<span class="lang:default decode:true  crayon-inline ">$1</span>')
             .replace(/__((?!__).+)__/g, '<span style="background-color: #ffff99;">$1</span>')
-            .replace(/\[([^[]]*)\]\(([^()]*)\)/g, '<a href="$2">$1</a>')
+            .replace(/\[([^[\]]*)]\(([^()]*)\)/g, '<a href="$2">$1</a>')
             .replace(/^\* (.*)$/gm, '● $1')
     }
 
