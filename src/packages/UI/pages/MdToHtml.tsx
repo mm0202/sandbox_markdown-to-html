@@ -51,6 +51,7 @@ function MdToHtml() {
             .replace(/__((?!__).+)__/g, '<span style="background-color: #ffff99;">$1</span>')
             .replace(/\[([^[\]]*)]\(([^()]*)\)/g, '<a href="$2">$1</a>')
             .replace(/^\* (.*)$/gm, '● $1')
+            .replace(/^[\s\t]+\* (.*)$/gm, '&nbsp;&nbsp;&nbsp;&nbsp;○ $1')
     }
 
     const createPreviewStringFromHtmlString = (html_string: string) => {
