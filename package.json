@@ -20,7 +20,7 @@
   "scripts": {
     "start": "react-scripts start",
     "tune-links": "sed -i 's/href=\"\\//href=\"\\/sandbox_markdown-to-html\\//g' ./build/index.html && sed -i 's/src=\"\\//src=\"\\/sandbox_markdown-to-html\\//g' ./build/index.html",
-    "build": "react-scripts build && npm run tune-links && rm -rf docs && mv build docs",
+    "build": "react-scripts build && yarn run tune-links && rm -rf docs && mv build docs",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
