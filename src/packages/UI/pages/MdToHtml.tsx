@@ -30,17 +30,17 @@ function MdToHtml() {
         }
     };
 
-    const pasteToMarkdown = () => {
-        if (navigator.clipboard) {
-            navigator.clipboard.readText()
-                .then(function (text) {
-                    setMarkdown(text);
-                    localStorage.setItem('md', text);
-                });
-        } else {
-            alert("Async Clipboard APIに対応していません。")
-        }
-    };
+    // const pasteToMarkdown = () => {
+    //     if (navigator.clipboard) {
+    //         navigator.clipboard.readText()
+    //             .then(function (text) {
+    //                 setMarkdown(text);
+    //                 localStorage.setItem('md', text);
+    //             });
+    //     } else {
+    //         alert("Async Clipboard APIに対応していません。")
+    //     }
+    // };
 
     const createHtmlStringFromMarkdown = (markdown: string) => {
         return markdown
@@ -49,10 +49,10 @@ function MdToHtml() {
             .replace(/```([^\n]*)\n([^`]*)```/g, '<pre class="lang:default decode:true ">$2</pre>')
             .replace(/`([^`]+)`/g, '<span class="lang:default decode:true  crayon-inline ">$1</span>')
             .replace(/__((?!__).+)__/g, '<span style="background-color: #ffff99;">$1</span>')
-            .replace(/\[([^[\]]*)]\(([^()]*)\)/g, '<a href="$2">$1</a>')
+            .replace(/\[([^[\]]*)]\(([^()]*)\)/g, '<a href="$2" target="_blank">$1</a>')
             .replace(/^\* (.*)$/gm, '● $1')
             .replace(/^[\s\t]+\* (.*)$/gm, '&nbsp;&nbsp;&nbsp;&nbsp;○ $1')
-    }
+    };
 
     const createPreviewStringFromHtmlString = (html_string: string) => {
         return html_string
@@ -60,7 +60,7 @@ function MdToHtml() {
             .replace('</h3><br>', '</h3>')
             .replace('</h2><br>', '</h2>')
             .replace('</pre><br>', '</pre>')
-    }
+    };
 
     const html_string = createHtmlStringFromMarkdown(markdown);
     const preview_string = createPreviewStringFromHtmlString(html_string);
